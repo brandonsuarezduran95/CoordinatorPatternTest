@@ -7,13 +7,52 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Coordinating {
+    var coordinator: Coordinator?
+    
+    let button = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBlue
+        title = "Home"
+        setupButton()
     }
-
-
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        print("ViewController Init")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        print("ViewController DeInit")
+    }
 }
 
+extension ViewController {
+    func setupButton() {
+        view.addSubview(button)
+        
+        button.layer.cornerRadius = 10
+        button.backgroundColor = .systemYellow
+        button.setTitle("Perform", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    @objc func didTapButton() {
+        coordinator?.eventOccurred(with: .showSecondController)
+    }
+}
