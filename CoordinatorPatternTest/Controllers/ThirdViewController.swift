@@ -10,7 +10,7 @@ import UIKit
 /// This Controller is in charge of fetching its own data. - MVC
 
 class ThirdViewController: UIViewController, Coordinating {
-    var coordinator: Coordinator?
+    var coordinator: MainCoordinator?
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
     var dataSource: [User] = [] {
         didSet {
@@ -26,6 +26,7 @@ class ThirdViewController: UIViewController, Coordinating {
         view.backgroundColor = .systemGreen
         setupTableView()
         fetchData()
+        addMoreButton()
     }
     
     init() {
@@ -47,13 +48,22 @@ class ThirdViewController: UIViewController, Coordinating {
             case .success(let data):
                 DispatchQueue.global(qos: .default).async { [unowned self] in
                     self.dataSource = data
-//                    print(data)
                 }
             case .failure(let error):
                 print(error.rawValue)
             }
         }
     }
+    
+    func addMoreButton() {
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapButton))
+        navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    @objc func didTapButton() {
+        coordinator?.eventOccurred(with: .yieldToChildCoordinatorA)
+    }
+
     
 }
 

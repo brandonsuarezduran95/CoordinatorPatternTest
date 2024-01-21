@@ -8,9 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController, Coordinating {
-    var coordinator: Coordinator?
+    var coordinator: MainCoordinator?
     
-    let button = UIButton()
+    let button = UIButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()

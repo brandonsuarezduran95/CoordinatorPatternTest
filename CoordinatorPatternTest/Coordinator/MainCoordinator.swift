@@ -7,8 +7,14 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
-    var children: [Coordinator]? = nil
+enum Event {
+    case showSecondController
+    case showThirdController
+    case yieldToChildCoordinatorA
+}
+
+final class MainCoordinator: Coordinator {
+    var children: [Coordinator] = []
     
     var navigationController: UINavigationController?
     
@@ -23,9 +29,21 @@ class MainCoordinator: Coordinator {
             var viewController:UIViewController & Coordinating = ThirdViewController()
             viewController.coordinator = self
             navigationController?.pushViewController(viewController, animated: true)
+            
+        case .yieldToChildCoordinatorA:
+            didYieldToChildCoordinatorA()
         }
     }
     
+    func didYieldToChildCoordinatorA() {
+        let childCoordinator = ChildCoordinatorA()
+        childCoordinator.navigationController = navigationController
+        childCoordinator.parentCoordinator = self
+        children.append(childCoordinator)
+        childCoordinator.start()
+    }
+    
+    // MARK: Start Method
     func start() {
         let viewController = ViewController()
         viewController.coordinator = self
@@ -37,4 +55,14 @@ class MainCoordinator: Coordinator {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
     }
+    
+    func childDidFinish(_ child: Coordinator?) {
+        for (index, coordinator) in children.enumerated() {
+            if coordinator === child {
+                children.remove(at: index)
+                break
+            }
+        }
+    }
 }
+
