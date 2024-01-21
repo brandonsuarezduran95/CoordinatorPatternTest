@@ -25,8 +25,7 @@ class SecondViewController: UIViewController, Coordinating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemYellow
-        title = "Second View"
+        setuController()
         viewModel.callback = { [unowned self] data in
             self.dataSource = data
         }
@@ -56,6 +55,11 @@ class SecondViewController: UIViewController, Coordinating {
 }
 
 extension SecondViewController {
+    
+    func setuController() {
+        view.backgroundColor = .systemYellow
+        title = "Second View"
+    }
     
     func addMoreButton() {
         let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapButton))
