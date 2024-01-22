@@ -31,12 +31,9 @@ final class ChildCoordinatorA: Coordinator {
         navigationController?.pushViewController(viewController, animated: true)     
     }
     
-    func didFinishCoordinating() {
-        parentCoordinator?.childDidFinish(self)
-    }
-    
     fileprivate func setupNavigationController() {
         navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.setToolbarHidden(false, animated: false)
     }
     
 }

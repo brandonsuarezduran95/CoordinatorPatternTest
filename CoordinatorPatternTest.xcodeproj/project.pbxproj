@@ -23,6 +23,8 @@
 		990E5DBF2B5CE21800487807 /* ChildCoordinatorA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DBE2B5CE21800487807 /* ChildCoordinatorA.swift */; };
 		990E5DC12B5CE2FA00487807 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DC02B5CE2FA00487807 /* FourthViewController.swift */; };
 		990E5DC42B5D0BF800487807 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DC32B5D0BF800487807 /* FifthViewController.swift */; };
+		990E5DC62B5E2DD900487807 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DC52B5E2DD900487807 /* Post.swift */; };
+		990E5DCB2B5E2FA200487807 /* FourthControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DCA2B5E2FA200487807 /* FourthControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		990E5DBE2B5CE21800487807 /* ChildCoordinatorA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinatorA.swift; sourceTree = "<group>"; };
 		990E5DC02B5CE2FA00487807 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		990E5DC32B5D0BF800487807 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		990E5DC52B5E2DD900487807 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		990E5DCA2B5E2FA200487807 /* FourthControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 				990E5DB22B5A5F7B00487807 /* NetworkError.swift */,
 				990E5DB42B5A5FB800487807 /* User.swift */,
 				990E5DB62B5A617500487807 /* NetworkManager.swift */,
+				990E5DC52B5E2DD900487807 /* Post.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -104,7 +109,7 @@
 				990E5D982B57D37300487807 /* ViewController.swift */,
 				990E5DB92B5A75C800487807 /* SecondController */,
 				990E5DAE2B59EEDB00487807 /* ThirdViewController.swift */,
-				990E5DC02B5CE2FA00487807 /* FourthViewController.swift */,
+				990E5DC92B5E2F7C00487807 /* FourthController */,
 				990E5DC32B5D0BF800487807 /* FifthViewController.swift */,
 			);
 			path = Controllers;
@@ -135,6 +140,15 @@
 				990E5DBE2B5CE21800487807 /* ChildCoordinatorA.swift */,
 			);
 			path = ChildCoordinatorA;
+			sourceTree = "<group>";
+		};
+		990E5DC92B5E2F7C00487807 /* FourthController */ = {
+			isa = PBXGroup;
+			children = (
+				990E5DC02B5CE2FA00487807 /* FourthViewController.swift */,
+				990E5DCA2B5E2FA200487807 /* FourthControllerViewModel.swift */,
+			);
+			path = FourthController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +223,7 @@
 			files = (
 				990E5DAD2B57D85900487807 /* SecondViewController.swift in Sources */,
 				990E5DB32B5A5F7B00487807 /* NetworkError.swift in Sources */,
+				990E5DCB2B5E2FA200487807 /* FourthControllerViewModel.swift in Sources */,
 				990E5DB72B5A617500487807 /* NetworkManager.swift in Sources */,
 				990E5DA92B57D48000487807 /* Coordinator.swift in Sources */,
 				990E5D992B57D37300487807 /* ViewController.swift in Sources */,
@@ -216,6 +231,7 @@
 				990E5DC42B5D0BF800487807 /* FifthViewController.swift in Sources */,
 				990E5DAF2B59EEDB00487807 /* ThirdViewController.swift in Sources */,
 				990E5DB52B5A5FB800487807 /* User.swift in Sources */,
+				990E5DC62B5E2DD900487807 /* Post.swift in Sources */,
 				990E5DBF2B5CE21800487807 /* ChildCoordinatorA.swift in Sources */,
 				990E5D952B57D37300487807 /* AppDelegate.swift in Sources */,
 				990E5DAB2B57D55200487807 /* MainCoordinator.swift in Sources */,
