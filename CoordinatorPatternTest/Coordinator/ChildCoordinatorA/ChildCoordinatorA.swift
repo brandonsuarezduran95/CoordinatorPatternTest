@@ -40,8 +40,8 @@ final class ChildCoordinatorA: Coordinator {
 
 extension ChildCoordinatorA {
     
-    func showFifthController(title: String, color: UIColor) {
-        let controller = FifthViewController(color: color, mainTitle: title)
+    func pushFifthController(title: String, color: UIColor, dataSource: [Post]) {
+        let controller = FifthViewController(color: color, mainTitle: title, dataSource: dataSource)
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }

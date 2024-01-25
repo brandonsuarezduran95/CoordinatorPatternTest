@@ -7,6 +7,10 @@
 
 import Foundation
 
+fileprivate enum Constants {
+    static let defaultPost: Post = Post(userId: 1, id: 2, title: "title", body: "string")
+}
+
 class FourthControllerViewModel {
     var dataSource: [Post] = []
     
@@ -23,6 +27,9 @@ class FourthControllerViewModel {
                     }
                 }
             case .failure(let error):
+                if let callback = self.callback {
+                    callback([Constants.defaultPost])
+                }
                 print(error.rawValue)
             }
         }

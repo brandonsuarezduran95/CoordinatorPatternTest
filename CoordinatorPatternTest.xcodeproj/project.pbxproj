@@ -25,6 +25,13 @@
 		990E5DC42B5D0BF800487807 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DC32B5D0BF800487807 /* FifthViewController.swift */; };
 		990E5DC62B5E2DD900487807 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DC52B5E2DD900487807 /* Post.swift */; };
 		990E5DCB2B5E2FA200487807 /* FourthControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E5DCA2B5E2FA200487807 /* FourthControllerViewModel.swift */; };
+		9951EDBC2B61BF9600F5D235 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951EDBB2B61BF9600F5D235 /* TabBarController.swift */; };
+		9951EDC12B6264FB00F5D235 /* ChildCoordinatorX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951EDC02B6264FB00F5D235 /* ChildCoordinatorX.swift */; };
+		9951EDC32B62654000F5D235 /* ChildCoordinatorY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951EDC22B62654000F5D235 /* ChildCoordinatorY.swift */; };
+		9951EDC52B62654E00F5D235 /* ChildCoordinatorZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951EDC42B62654E00F5D235 /* ChildCoordinatorZ.swift */; };
+		9951EDC82B6266DA00F5D235 /* ViewControllerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951EDC72B6266DA00F5D235 /* ViewControllerX.swift */; };
+		9951EDCA2B62672F00F5D235 /* ViewControllerY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951EDC92B62672F00F5D235 /* ViewControllerY.swift */; };
+		9951EDCC2B62673900F5D235 /* ViewControllerZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951EDCB2B62673900F5D235 /* ViewControllerZ.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +55,13 @@
 		990E5DC32B5D0BF800487807 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		990E5DC52B5E2DD900487807 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		990E5DCA2B5E2FA200487807 /* FourthControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthControllerViewModel.swift; sourceTree = "<group>"; };
+		9951EDBB2B61BF9600F5D235 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9951EDC02B6264FB00F5D235 /* ChildCoordinatorX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinatorX.swift; sourceTree = "<group>"; };
+		9951EDC22B62654000F5D235 /* ChildCoordinatorY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinatorY.swift; sourceTree = "<group>"; };
+		9951EDC42B62654E00F5D235 /* ChildCoordinatorZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinatorZ.swift; sourceTree = "<group>"; };
+		9951EDC72B6266DA00F5D235 /* ViewControllerX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerX.swift; sourceTree = "<group>"; };
+		9951EDC92B62672F00F5D235 /* ViewControllerY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerY.swift; sourceTree = "<group>"; };
+		9951EDCB2B62673900F5D235 /* ViewControllerZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerZ.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +120,7 @@
 		990E5DB12B5A5F5700487807 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9951EDBA2B61BF1B00F5D235 /* TabBarController */,
 				990E5D982B57D37300487807 /* ViewController.swift */,
 				990E5DB92B5A75C800487807 /* SecondController */,
 				990E5DAE2B59EEDB00487807 /* ThirdViewController.swift */,
@@ -118,6 +133,7 @@
 		990E5DB82B5A653400487807 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				9951EDBD2B6264C500F5D235 /* TabBarChildCoordinators */,
 				990E5DBC2B5CE1FE00487807 /* ChildCoordinatorA */,
 				990E5DAA2B57D55200487807 /* MainCoordinator.swift */,
 				990E5DA82B57D48000487807 /* Coordinator.swift */,
@@ -149,6 +165,35 @@
 				990E5DCA2B5E2FA200487807 /* FourthControllerViewModel.swift */,
 			);
 			path = FourthController;
+			sourceTree = "<group>";
+		};
+		9951EDBA2B61BF1B00F5D235 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9951EDC62B62668D00F5D235 /* Controllers */,
+				9951EDBB2B61BF9600F5D235 /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		9951EDBD2B6264C500F5D235 /* TabBarChildCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9951EDC02B6264FB00F5D235 /* ChildCoordinatorX.swift */,
+				9951EDC22B62654000F5D235 /* ChildCoordinatorY.swift */,
+				9951EDC42B62654E00F5D235 /* ChildCoordinatorZ.swift */,
+			);
+			path = TabBarChildCoordinators;
+			sourceTree = "<group>";
+		};
+		9951EDC62B62668D00F5D235 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9951EDC72B6266DA00F5D235 /* ViewControllerX.swift */,
+				9951EDC92B62672F00F5D235 /* ViewControllerY.swift */,
+				9951EDCB2B62673900F5D235 /* ViewControllerZ.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,15 +272,22 @@
 				990E5DB72B5A617500487807 /* NetworkManager.swift in Sources */,
 				990E5DA92B57D48000487807 /* Coordinator.swift in Sources */,
 				990E5D992B57D37300487807 /* ViewController.swift in Sources */,
+				9951EDCA2B62672F00F5D235 /* ViewControllerY.swift in Sources */,
+				9951EDC32B62654000F5D235 /* ChildCoordinatorY.swift in Sources */,
+				9951EDBC2B61BF9600F5D235 /* TabBarController.swift in Sources */,
 				990E5DC12B5CE2FA00487807 /* FourthViewController.swift in Sources */,
 				990E5DC42B5D0BF800487807 /* FifthViewController.swift in Sources */,
 				990E5DAF2B59EEDB00487807 /* ThirdViewController.swift in Sources */,
 				990E5DB52B5A5FB800487807 /* User.swift in Sources */,
+				9951EDC52B62654E00F5D235 /* ChildCoordinatorZ.swift in Sources */,
 				990E5DC62B5E2DD900487807 /* Post.swift in Sources */,
+				9951EDC12B6264FB00F5D235 /* ChildCoordinatorX.swift in Sources */,
 				990E5DBF2B5CE21800487807 /* ChildCoordinatorA.swift in Sources */,
+				9951EDCC2B62673900F5D235 /* ViewControllerZ.swift in Sources */,
 				990E5D952B57D37300487807 /* AppDelegate.swift in Sources */,
 				990E5DAB2B57D55200487807 /* MainCoordinator.swift in Sources */,
 				990E5D972B57D37300487807 /* SceneDelegate.swift in Sources */,
+				9951EDC82B6266DA00F5D235 /* ViewControllerX.swift in Sources */,
 				990E5DBB2B5A75E400487807 /* SecondControllerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,10 @@
 import UIKit
 
 enum Event {
-    case showSecondController
-    case showThirdController
+    case pushSecondController
+    case pushThirdController
     case yieldToChildCoordinatorA
+    case presentTabController
 }
 
 final class MainCoordinator: NSObject, Coordinator {
@@ -20,18 +21,24 @@ final class MainCoordinator: NSObject, Coordinator {
     
     func eventOccurred(with type: Event) {
         switch type {
-        case .showSecondController:
+        case .pushSecondController:
             var viewController: UIViewController & Coordinating = SecondViewController()
             viewController.coordinator = self
             navigationController?.pushViewController(viewController, animated: true)
             
-        case .showThirdController:
+        case .pushThirdController:
             var viewController:UIViewController & Coordinating = ThirdViewController()
             viewController.coordinator = self
             navigationController?.pushViewController(viewController, animated: true)
             
         case .yieldToChildCoordinatorA:
             didYieldToChildCoordinatorA()
+            
+        case .presentTabController:
+            let barController = TabBarController()
+            barController.coordinator = self
+            barController.modalPresentationStyle = .fullScreen
+            navigationController?.present(barController, animated: true)
         }
     }
     

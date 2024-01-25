@@ -9,6 +9,10 @@ import UIKit
 
 /// This Controller is in charge of fetching its own data. - MVC
 
+fileprivate enum Constants {
+    static let defaultUser: User = User(id: 1, name: "Default", username: "Default", email: "@dafault.com", address: Address(street: "StreetName", suite: "Suite", city: "city", zipcode: "12345", geo: Geo(lat: "123", lng: "456")), phone: "123456", website: "www.default.io", company: Company(name: "Company", catchPhrase: "catchPhrase", bs: "bs"))
+}
+
 class ThirdViewController: UIViewController, Coordinating {
     var coordinator: MainCoordinator?
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -50,6 +54,7 @@ class ThirdViewController: UIViewController, Coordinating {
                     self.dataSource = data
                 }
             case .failure(let error):
+                self.dataSource = [Constants.defaultUser]
                 print(error.rawValue)
             }
         }

@@ -77,15 +77,15 @@ extension FourthViewController {
     
     func createMenu() -> UIMenu {
         let actionA = UIAction(title: "Action A") { [unowned self] _ in
-            coordinator?.showFifthController(title: "FifthView - A", color: .systemPurple)
+            coordinator?.pushFifthController(title: "FifthView - A", color: .systemPurple, dataSource: dataSource)
         }
         
         let actionB = UIAction(title: "Action B") { [unowned self] _ in
-            coordinator?.showFifthController(title: "FifthView - B", color: .systemMint)
+            coordinator?.pushFifthController(title: "FifthView - B", color: .systemMint, dataSource: dataSource)
         }
         
         let actionC = UIAction(title: "Action C") { [unowned self] _ in
-            coordinator?.showFifthController(title: "FifthView - C", color: .systemYellow)
+            coordinator?.pushFifthController(title: "FifthView - C", color: .systemYellow, dataSource: dataSource)
         }
         
         let menu = UIMenu(title: "More", children: [actionA, actionB, actionC])

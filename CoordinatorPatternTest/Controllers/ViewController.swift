@@ -11,12 +11,14 @@ class ViewController: UIViewController, Coordinating {
     var coordinator: MainCoordinator?
     
     let button = UIButton(type: .system)
+    let tabBarButton = UIButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBlue
         title = "Home"
         setupButton()
+        setupTabBarButton()
     }
     
     init() {
@@ -52,7 +54,29 @@ extension ViewController {
         ])
     }
     
+    func setupTabBarButton() {
+        view.addSubview(tabBarButton)
+        
+        tabBarButton.setTitle("Show Tab Bar", for: .normal)
+        tabBarButton.setTitleColor(.white, for: .normal)
+        tabBarButton.backgroundColor = .systemYellow
+        tabBarButton.layer.cornerRadius = 10
+        tabBarButton.addTarget(self, action: #selector(didTapTabBarButton), for: .touchUpInside)
+        
+        tabBarButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tabBarButton.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 30),
+            tabBarButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tabBarButton.widthAnchor.constraint(equalToConstant: 150),
+            tabBarButton.heightAnchor.constraint(equalToConstant: 30),
+        ])
+    }
+    
     @objc func didTapButton() {
-        coordinator?.eventOccurred(with: .showSecondController)
+        coordinator?.eventOccurred(with: .pushSecondController)
+    }
+    
+    @objc func didTapTabBarButton() {
+        coordinator?.eventOccurred(with: .presentTabController)
     }
 }

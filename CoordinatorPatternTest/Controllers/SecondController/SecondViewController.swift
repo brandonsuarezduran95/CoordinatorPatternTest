@@ -8,7 +8,7 @@
 import UIKit
 
 /// ViewModel is fetching the data for the controller - MVVM
-
+///
 class SecondViewController: UIViewController, Coordinating {
     var coordinator: MainCoordinator?
     
@@ -67,7 +67,7 @@ extension SecondViewController {
     }
     
     @objc func didTapButton() {
-        coordinator?.eventOccurred(with: .showThirdController)
+        coordinator?.eventOccurred(with: .pushThirdController)
     }
     
 }
