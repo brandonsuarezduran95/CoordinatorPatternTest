@@ -23,7 +23,8 @@ class ViewController: UIViewController, Coordinating {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        print("ViewController Init")
+        print("ViewController Init", "\n---------")
+        
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +32,7 @@ class ViewController: UIViewController, Coordinating {
     }
     
     deinit {
-        print("ViewController DeInit")
+        print("ViewController DeInit", "\n---------")
     }
 }
 

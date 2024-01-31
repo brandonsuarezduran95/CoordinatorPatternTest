@@ -9,19 +9,28 @@ import UIKit
 
 class ChildCoordinatorX: Coordinator {
     var navigationController: UINavigationController?
-    
     var children: [Coordinator] = []
+    var mainController: ViewControllerX? = ViewControllerX()
+    
+    weak var parentCoordinator: MainCoordinator?
     
     init() {
-        print("ChildCoordinatorX Init")
+        print("1A.-ChildCoordinatorX Init\n")
     }
     
     deinit {
-        print("ChildCoordinatorX Deinit")
+        print("1A.-ChildCoordinatorX Deinit\n")
     }
     
     func start() {
-        
+        mainController?.coordinator = self
+        mainController?.tabBarItem = UITabBarItem(title: "Controller X", image: .init(systemName: "square.fill"),selectedImage: nil)
+        navigationController?.pushViewController(mainController!, animated: true)
+    }
+    
+    func cleanUp() {
+        mainController = nil
+        navigationController = nil
     }
     
 }

@@ -12,9 +12,12 @@ enum Event {
     case pushThirdController
     case yieldToChildCoordinatorA
     case presentTabController
+    case dismissTabBarController
 }
 
 final class MainCoordinator: NSObject, Coordinator {
+    var barController: TabBarController?
+    
     var children: [Coordinator] = []
     
     var navigationController: UINavigationController?
@@ -35,10 +38,28 @@ final class MainCoordinator: NSObject, Coordinator {
             didYieldToChildCoordinatorA()
             
         case .presentTabController:
-            let barController = TabBarController()
-            barController.coordinator = self
-            barController.modalPresentationStyle = .fullScreen
+            barController = TabBarController()
+            barController?.coordinator = self
+            barController?.modalPresentationStyle = .fullScreen
+            
+            guard let barController = self.barController else { return }
             navigationController?.present(barController, animated: true)
+            
+        case .dismissTabBarController:
+            
+            barController?.coordinator = nil
+            barController = nil
+            // 1.- remove the coordinators from the children Array
+            
+            children.removeAll { coordinator in
+                if coordinator is ChildCoordinatorX || coordinator is ChildCoordinatorY || coordinator is ChildCoordinatorZ {
+                    return true
+                }
+                return false
+            }
+            
+            print("The children are: ",children)
+            
         }
     }
     

@@ -8,22 +8,25 @@
 import UIKit
 
 class ViewControllerY: UIViewController {
-
+    var coordinator: ChildCoordinatorY?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .green
+        title = "Controller Y"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        print("2B.-ViewControllerY Init\n")
     }
-    */
-
+    
+    deinit {
+        print("2B.-ViewControllerY Deinit\n")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
