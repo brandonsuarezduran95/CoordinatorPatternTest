@@ -13,9 +13,10 @@ class ViewControllerZ: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
+        view.backgroundColor = .systemBrown
         title = "Controller Z"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
     }
     
     init() {

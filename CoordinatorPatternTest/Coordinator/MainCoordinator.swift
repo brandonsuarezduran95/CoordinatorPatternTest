@@ -7,6 +7,11 @@
 
 import UIKit
 
+/*
+ You can create an Event Enum with all the events from the Coordinator, and create a method with a switch statement
+ to call on every event, or you can create methods to simulate the same action inside the Coordinator
+*/
+
 enum Event {
     case pushSecondController
     case pushThirdController
@@ -43,13 +48,15 @@ final class MainCoordinator: NSObject, Coordinator {
             barController?.modalPresentationStyle = .fullScreen
             
             guard let barController = self.barController else { return }
+            
             navigationController?.present(barController, animated: true)
             
         case .dismissTabBarController:
             
+            // 1.- De-initialize the tabBarCoordinator
             barController?.coordinator = nil
             barController = nil
-            // 1.- remove the coordinators from the children Array
+            // 2.- remove the coordinators from the children Array
             
             children.removeAll { coordinator in
                 if coordinator is ChildCoordinatorX || coordinator is ChildCoordinatorY || coordinator is ChildCoordinatorZ {
@@ -63,7 +70,7 @@ final class MainCoordinator: NSObject, Coordinator {
         }
     }
     
-    func didYieldToChildCoordinatorA() {
+    fileprivate func didYieldToChildCoordinatorA() {
         let childCoordinator = ChildCoordinatorA()
         childCoordinator.navigationController = navigationController
         childCoordinator.parentCoordinator = self

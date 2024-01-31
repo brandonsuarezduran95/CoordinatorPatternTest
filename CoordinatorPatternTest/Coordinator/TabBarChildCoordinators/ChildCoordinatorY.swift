@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ChildCoordinatorY: Coordinator {
+enum CoordinatorYEvent {
+    case test
+}
+
+final class ChildCoordinatorY: Coordinator {
     var navigationController: UINavigationController?
     var children: [Coordinator] = []
     var mainController: ViewControllerY? = ViewControllerY()
@@ -20,6 +24,16 @@ class ChildCoordinatorY: Coordinator {
     
     deinit {
         print("2A.-ChildCoordinatorY Deinit\n")
+    }
+    
+    func eventActivated(event: CoordinatorYEvent) {
+        switch event {
+        case .test:
+            let controller = UIViewController()
+            controller.view.backgroundColor = .systemPurple
+            controller.title = "Test"
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     func start() {

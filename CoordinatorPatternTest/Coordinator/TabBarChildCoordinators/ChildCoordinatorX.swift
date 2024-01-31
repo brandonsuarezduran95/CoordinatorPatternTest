@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChildCoordinatorX: Coordinator {
+final class ChildCoordinatorX: Coordinator {
     var navigationController: UINavigationController?
     var children: [Coordinator] = []
     var mainController: ViewControllerX? = ViewControllerX()

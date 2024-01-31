@@ -6,7 +6,14 @@
 //
 
 import UIKit
-
+/*
+ This UITabBarController owns its Child Coordinators,
+ at the moment of it displaying its view, the controller initializes its coordinators,
+ and passes the navigationControllers of the coordinators as the UITabBarController's viewControllers
+ by passing the navigationControllers of each ChildCoordinator we ensure displaying a title, as well as navigation
+ capabilities
+ 
+*/
 class TabBarController: UITabBarController, Coordinating {
     var coordinator: MainCoordinator?
     
@@ -40,6 +47,7 @@ class TabBarController: UITabBarController, Coordinating {
     func setupTabBar() {
         view.backgroundColor = .systemPink
         tabBar.backgroundColor = .white
+        title = "Test"
         
         childCoordinatorX.parentCoordinator = coordinator
         childCoordinatorY.parentCoordinator = coordinator
@@ -55,14 +63,16 @@ class TabBarController: UITabBarController, Coordinating {
         
         coordinator?.children = [childCoordinatorX, childCoordinatorY, childCoordinatorZ ]
         
-        guard let controllerX = childCoordinatorX.mainController,
-              let controllerY = childCoordinatorY.mainController,
-              let controllerZ = childCoordinatorZ.mainController
+        guard let controllerX = childCoordinatorX.navigationController,
+              let controllerY = childCoordinatorY.navigationController,
+              let controllerZ = childCoordinatorZ.navigationController
         else { return }
         
-        viewControllers = [ controllerX, controllerY, controllerZ]
+        viewControllers = [ controllerX, controllerY, controllerZ ]
     }
     
+    // The cleanup of every Coordinator will ensure De-init of every controller inside each coordinator, as well
+    // as the navigationController
     func cleanUp() {
         childCoordinatorX.cleanUp()
         childCoordinatorY.cleanUp()

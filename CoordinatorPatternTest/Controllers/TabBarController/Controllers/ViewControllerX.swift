@@ -14,9 +14,10 @@ class ViewControllerX: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemRed
         title = "Controller X"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
         setupButton()
     }
     
